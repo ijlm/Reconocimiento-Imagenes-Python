@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'detector-borrachos'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_72720E550FF04663B7C27077D71C9A87 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8084C96000B640548B528ED94C3502C1 }}
