@@ -39,8 +39,13 @@ Se decidió llevar la aplicación a Azure y desplegarla en un Service App Web pa
 
 Comando para ejecutar la aplicación en Azure:
 
+-cofiguramos la web app
+![Configuración en azure](tmp_readme/crear_app1.JPG)
 
-python -m streamlit run main.py --server.port 8000
+-despliegue desde github
+![Despliegue](tmp_readme/crear_app2.JPG)
+
+python -m streamlit run main.py --server.port 80
 
 
 
