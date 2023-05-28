@@ -1,13 +1,13 @@
 # Reconocimiento Facial con Streamlit
 
-Este proyecto utiliza el reconocimiento facial para detectar si una persona está borracha o no, utilizando una red neuronal convolucional. La aplicación está desarrollada en Python utilizando las siguientes tecnologías: OpenCV, Keras y Streamlit.
+Este proyecto utiliza el reconocimiento facial para detectar si una persona está borracha o no utilizando una red neuronal convolucional. La aplicación está desarrollada en Python utilizando las siguientes tecnologías: OpenCV, Keras y Streamlit.
 
 ## Pasos
 
-## Paso1
+### Paso 1: Creación y entrenamiento del modelo
 
-Se creo el modelo en Colab, utlizando GPU para su entrenamiento, con imagenes de google de personas borrachas y no. con la estructura de directores de
--data
+En esta etapa, se creó el modelo utilizando Colab, aprovechando la potencia de la GPU para su entrenamiento. Se utilizaron imágenes de personas borrachas y no borrachas obtenidas de fuentes externas. La estructura de directorios utilizada para el conjunto de datos fue la siguiente:
+
     --test
         --Borraho
         --No_borracho
@@ -17,23 +17,28 @@ Se creo el modelo en Colab, utlizando GPU para su entrenamiento, con imagenes de
 
 - Paquetes necesarios: `keras`,`TensorFlow`,`PIL`
 
-### funcion de perdida del modelo, el cual es muy mejorale con mas imagenes de entrenamiento
-[![Paso1](tmp_readme/loss_model.JPG)](tmp_readme/loss_model.JPG)
+Se utilizó la función de pérdida del modelo para evaluar su rendimiento. Sin embargo, se reconoce que el modelo puede mejorar con más imágenes de entrenamiento.
 
-## Paso2
-una vez creado el modelo se procesdio a guardarlo y ha realizar la ejecucion para su consumo, version desktop.
+![Función de pérdida del modelo](tmp_readme/loss_model.JPG)
 
-- Paquetes necesarios: `keras`,`TensorFlow`,`PIL`,`PIcv2L`
-[![Paso2](tmp_readme/prueba_desk_borra.JPG)](tmp_readme/prueba_desk_borra.JPG)
+### Paso 2: Ejecución de la aplicación en versión desktop
 
-## Paso3 
-Se crea una version web, con streamlit, buscando que esta sea publicada y usada.
+Una vez creado el modelo, se procedió a guardarlo y realizar la ejecución de la aplicación en una versión de escritorio. Se utilizaron los paquetes necesarios: `keras`, `TensorFlow`, `PIL` y `OpenCV`.
 
-- Paquetes necesarios: `keras`,`TensorFlow`,`PIL`,`PIcv2L`,`PstreamlitIcv2L`
-[![Paso2](tmp_readme/version_Web.JPG)](tmp_readme/version_Web.JPG)
+![Ejemplo de ejecución en versión desktop](tmp_readme/prueba_desk_borra.JPG)
 
-## Paso4
-Se decide llevar esta azure, y desplegarla en un Service APP Web, para su consumo, este desploy se realiza desde GitHub
+### Paso 3: Creación de la versión web con Streamlit
+
+Se creó una versión web de la aplicación utilizando Streamlit. El objetivo fue facilitar su acceso y uso. Se agregaron los paquetes necesarios: `keras`, `TensorFlow`, `PIL`, `OpenCV` y `Streamlit`.
+
+![Ejemplo de la versión web](tmp_readme/version_Web.JPG)
+
+### Paso 4: Despliegue en Azure
+
+Se decidió llevar la aplicación a Azure y desplegarla en un Service App Web para su consumo. El despliegue se realiza directamente desde GitHub.
+
+Comando para ejecutar la aplicación en Azure:
+
 
 python -m streamlit run main.py --server.port 8000
 
