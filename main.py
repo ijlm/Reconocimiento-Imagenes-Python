@@ -18,9 +18,10 @@ def main():
     st.write("Presiona el botón 'Iniciar' para comenzar el reconocimiento facial.")
 
     cap = cv2.VideoCapture(0)
+    detener = st.checkbox("Detener")
 
     if st.button("Iniciar"):
-        while True:
+        while not detener:
             ret, frame = cap.read()
             img = process_image(frame, 224, 224)
             prediction = model.predict(img)
@@ -36,12 +37,11 @@ def main():
             frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
             
             st.image(frame, channels="RGB")
-            
-            if st.button("Detener"):
-                break
             time.sleep(0.5)
-
+            st.empty()  # Borra la imagen anterior antes de mostrar la siguiente
+            
         cap.release()
 
 if __name__ == "__main__":
     main()
+
