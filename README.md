@@ -1,4 +1,4 @@
-# Reconocimiento Facial con Streamlit
+# Reconocimiento Facial de Borrachos con Streamlit
 
 Este proyecto utiliza el reconocimiento facial para detectar si una persona está borracha o no utilizando una red neuronal convolucional. La aplicación está desarrollada en Python utilizando las siguientes tecnologías: OpenCV, Keras y Streamlit.
 
