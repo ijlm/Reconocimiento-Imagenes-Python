@@ -4,6 +4,7 @@ from keras.models import load_model
 from keras.preprocessing import image
 import time
 import streamlit as st
+from PIL import Image
 
 model = load_model('modelo/modelo.h5') 
 
@@ -14,11 +15,12 @@ def process_image(img, img_width, img_height):
     return img
 
 def main():
-    st.title("Reconocimiento Facial")
+    st.title("Reconocimiento Facial Borrachos")
     st.write("Presiona el botón 'Iniciar' para comenzar el reconocimiento facial.")
 
     cap = cv2.VideoCapture(0)
-    detener = st.checkbox("Detener")
+    detener = st.checkbox("Detener")    
+    image_placeholder = st.empty()
 
     if st.button("Iniciar"):
         while not detener:
@@ -26,7 +28,7 @@ def main():
             img = process_image(frame, 224, 224)
             prediction = model.predict(img)
 
-            if prediction < 0.5:
+            if prediction < 0.4:
                 label = 'Normal'
                 color = (0, 255, 0)
             else:
@@ -36,12 +38,12 @@ def main():
             frame = cv2.putText(frame, label + str(prediction), (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 1, color, 2)
             frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
             
-            st.image(frame, channels="RGB")
+            pil_image = Image.fromarray(frame)
+            image_placeholder.image(pil_image)
+
             time.sleep(0.5)
-            st.empty()  # Borra la imagen anterior antes de mostrar la siguiente
             
         cap.release()
 
 if __name__ == "__main__":
     main()
-
