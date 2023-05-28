@@ -32,6 +32,13 @@ Se crea una version web, con streamlit, buscando que esta sea publicada y usada.
 - Paquetes necesarios: `keras`,`TensorFlow`,`PIL`,`PIcv2L`,`PstreamlitIcv2L`
 [![Paso2](tmp_readme/version_Web.JPG)](tmp_readme/version_Web.JPG)
 
+## Paso4
+Se decide llevar esta azure, y desplegarla en un Service APP Web, para su consumo, este desploy se realiza desde GitHub
+
+python -m streamlit run main.py --server.port 8000
+
+
+
 ## Instalación
 
 1. Clonar el repositorio a tu máquina local:
